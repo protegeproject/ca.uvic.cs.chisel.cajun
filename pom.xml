@@ -3,12 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
+		<groupId>edu.stanford.protege</groupId>
+		<artifactId>protege-parent</artifactId>
+		<version>5.0.0-beta-01-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>edu.stanford.protege</groupId>
 	<artifactId>ca.uvic.cs.chisel.cajun</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
@@ -20,12 +19,6 @@
 		<name>Computer Human Interaction &amp; Software Engineering Lab, Department of Computer Science, University of Victoria</name>
 		<url>http://thechiselgroup.org/</url>
 	</organization>
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License</name>
-			<url>http://www.gnu.org/copyleft/lesser.html</url>
-		</license>
-	</licenses>
 	
 	<developers>
 		<developer>
@@ -34,29 +27,19 @@
 		</developer>
 	</developers>
 	
-	<mailingLists>
-		<mailingList>
-			<name>p4-feedback</name>
-			<subscribe>http://mailman.stanford.edu/mailman/listinfo/p4-feedback</subscribe>
-			<unsubscribe>http://mailman.stanford.edu/mailman/listinfo/p4-feedback</unsubscribe>
-			<post>p4-feedback@lists.stanford.edu</post>
-			<archive>https://mailman.stanford.edu/pipermail/p4-feedback/</archive>
-			<otherArchives>
-				<otherArchive>http://protege-ontology-editor-knowledge-acquisition-system.136.n4.nabble.com/Protege-OWL-4-x-Support-f21363.html</otherArchive>
-			</otherArchives>
-		</mailingList>
-	</mailingLists>
-	
 	<scm>
 		<connection>scm:svn:http://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</connection>
 		<developerConnection>scm:svn:https://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</developerConnection>
 		<url>http://smi-protege.stanford.edu/svn/protege4/libraries/ca.uvic.cs.chisel.cajun/</url>
 	</scm>
-
-    <properties>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
+	
+	<repositories>
+		<repository>
+			<id>github</id>
+			<url>https://github.com/protegeproject/mvn-repo/raw/master/releases</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
 		<!-- Draw2d (http://www.eclipse.org/gef/draw2d/index.php) -->
 		<dependency>
@@ -68,11 +51,9 @@
 		<!-- Zest: The Eclipse Visualization Toolkit (http://www.eclipse.org/gef/zest/index.php) -->
 		<!-- According to Eclipse documentation, this set of visualization components was developed specifically for Eclipse.  Developing applications outside of Eclipse using Zest is not supported. -->
 		<dependency>
-			<groupId>org.eclipse.zest.layouts</groupId>
+			<groupId>org.eclipse.zest</groupId>
 			<artifactId>layouts</artifactId>
 			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/layouts.jar</systemPath>
 		</dependency>
 		
 		<!-- Piccolo2D - Structured 2D Graphics Framework
@@ -94,16 +75,6 @@
 	<build>
 		<plugins>
             <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-            </plugin>
-
-            <plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<version>2.3.7</version>
@@ -111,11 +82,22 @@
 				<configuration>
 					<instructions>
 						<Bundle-Activator>org.protege.editor.owl.ProtegeOWL</Bundle-Activator>
-						<Bundle-ClassPath>.</Bundle-ClassPath>
-						<Bundle-SymbolicName>ca.uvic.cs.chisel.cajun;singleton:=true</Bundle-SymbolicName>
+						<Bundle-SymbolicName>${project.artifactId};singleton:=true</Bundle-SymbolicName>
 						<Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
-						<Export-Package>ca.uvic.cs.chisel.cajun.*, org.eclipse.zest.layouts.*, org.eclipse.draw2d.*, edu.umd.cs.piccolo.*, edu.umd.cs.piccolox.*</Export-Package>
-						<Import-Package>!com.ibm.*, !org.eclipse.swt.*, !org.eclipse.core.runtime.*, !org.eclipse.jface.*, *</Import-Package>
+						<Export-Package>
+							${project.artifactId}*, 
+							org.eclipse.zest.layouts.*, 
+							org.eclipse.draw2d.*, 
+							edu.umd.cs.piccolo.*, 
+							edu.umd.cs.piccolox.*
+						</Export-Package>
+						<Import-Package>
+							!com.ibm.*, 
+							!org.eclipse.swt.*, 
+							!org.eclipse.core.runtime.*, 
+							!org.eclipse.jface.*, 
+							*
+						</Import-Package>
 					</instructions>
 					<executions>
 						<execution>
@@ -128,63 +110,6 @@
 					</executions>
 				</configuration>
             </plugin>
-            
-			<!-- Generate -sources.jar file. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- Generate -javadoc.jar file. -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
-	
-	<profiles>
-		<profile>
-			<id>sign-artifacts</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.4</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>
