@@ -10,7 +10,7 @@
 	</parent>
 	
 	<artifactId>ca.uvic.cs.chisel.cajun</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
 	<name>Cajun Visualization Library</name>
@@ -29,9 +29,9 @@
 	</developers>
 	
 	<scm>
-		<connection>scm:svn:http://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/tags/ca.uvic.cs.chisel.cajun-1.0.1</connection>
-		<developerConnection>scm:svn:https://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/tags/ca.uvic.cs.chisel.cajun-1.0.1</developerConnection>
-		<url>http://smi-protege.stanford.edu/svn/protege4/libraries/ca.uvic.cs.chisel.cajun/tags/ca.uvic.cs.chisel.cajun-1.0.1</url>
+		<connection>scm:svn:http://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</connection>
+		<developerConnection>scm:svn:https://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</developerConnection>
+		<url>http://smi-protege.stanford.edu/svn/protege4/libraries/ca.uvic.cs.chisel.cajun/</url>
 	</scm>
 	
 	<repositories>
