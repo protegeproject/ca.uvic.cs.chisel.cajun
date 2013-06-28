@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>edu.stanford.protege</groupId>
-		<artifactId>protege-parent</artifactId>
-		<version>5.0.0-beta-03</version>
-		<relativePath>../protege-parent/pom.xml</relativePath>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
 	</parent>
 	
+	<groupId>edu.stanford.protege</groupId>
 	<artifactId>ca.uvic.cs.chisel.cajun</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<packaging>bundle</packaging>
@@ -20,7 +20,13 @@
 		<name>Computer Human Interaction &amp; Software Engineering Lab, Department of Computer Science, University of Victoria</name>
 		<url>http://thechiselgroup.org/</url>
 	</organization>
-	
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License</name>
+			<url>http://www.gnu.org/copyleft/lesser.html</url>
+		</license>
+	</licenses>
+		
 	<developers>
 		<developer>
 			<name>Sean Falconer</name>
