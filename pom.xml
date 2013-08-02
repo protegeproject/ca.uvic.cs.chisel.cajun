@@ -1,122 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
-	
-	<groupId>edu.stanford.protege</groupId>
-	<artifactId>ca.uvic.cs.chisel.cajun</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
-	<packaging>bundle</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    
+    <groupId>edu.stanford.protege</groupId>
+    <artifactId>ca.uvic.cs.chisel.cajun</artifactId>
+    <version>1.0.3-SNAPSHOT</version>
+    <packaging>bundle</packaging>
 
-	<name>Cajun Visualization Library</name>
-	<description>Visualization library used by the OntoGraf plug-in for the Protege ontology editing environment.</description>
-	<url>http://thechiselgroup.org/</url>
-	<organization>
-		<name>Computer Human Interaction &amp; Software Engineering Lab, Department of Computer Science, University of Victoria</name>
-		<url>http://thechiselgroup.org/</url>
-	</organization>
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License</name>
-			<url>http://www.gnu.org/copyleft/lesser.html</url>
-		</license>
-	</licenses>
-		
-	<developers>
-		<developer>
-			<name>Sean Falconer</name>
-			<email>falconer.sean@gmail.com</email>
-		</developer>
-	</developers>
-	
-	<scm>
-		<connection>scm:svn:http://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</connection>
-		<developerConnection>scm:svn:https://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</developerConnection>
-		<url>http://smi-protege.stanford.edu/svn/protege4/libraries/ca.uvic.cs.chisel.cajun/</url>
-	</scm>
-	
-	<repositories>
-		<repository>
-			<id>github</id>
-			<url>https://github.com/protegeproject/mvn-repo/raw/master/releases</url>
-		</repository>
-	</repositories>
-	
-	<dependencies>
-		<!-- Draw2d (http://www.eclipse.org/gef/draw2d/index.php) -->
-		<dependency>
-			<groupId>org.eclipse</groupId>
-			<artifactId>draw2d</artifactId>
-			<version>3.2.100-v20070529</version>
-		</dependency>
-		
-		<!-- Zest: The Eclipse Visualization Toolkit (http://www.eclipse.org/gef/zest/index.php) -->
-		<!-- According to Eclipse documentation, this set of visualization components was developed specifically for Eclipse.  Developing applications outside of Eclipse using Zest is not supported. -->
-		<dependency>
-			<groupId>org.eclipse.zest</groupId>
-			<artifactId>layouts</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		
-		<!-- Piccolo2D - Structured 2D Graphics Framework
-			  https://code.google.com/p/piccolo2d/
-			  http://www.piccolo2d.org/index.html
-			  https://www.cs.umd.edu/hcil/jazz/index.shtml -->
-		<dependency>
-			<groupId>org.piccolo2d</groupId>
-			<artifactId>piccolo2d-core</artifactId>
-			<version>1.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.piccolo2d</groupId>
-			<artifactId>piccolo2d-extras</artifactId>
-			<version>1.3.1</version>
-		</dependency>		
-	</dependencies>
+    <name>Cajun Visualization Library</name>
+    <description>Visualization library used by the OntoGraf plug-in for the Protege ontology editing environment.</description>
+    <url>http://thechiselgroup.org/</url>
+    <organization>
+        <name>Computer Human Interaction &amp; Software Engineering Lab, Department of Computer Science, University of Victoria</name>
+        <url>http://thechiselgroup.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License</name>
+            <url>http://www.gnu.org/copyleft/lesser.html</url>
+        </license>
+    </licenses>
+        
+    <developers>
+        <developer>
+            <name>Sean Falconer</name>
+            <email>falconer.sean@gmail.com</email>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:svn:http://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</connection>
+        <developerConnection>scm:svn:https://smi-protege.stanford.edu/repos/protege/protege4/libraries/ca.uvic.cs.chisel.cajun/trunk/</developerConnection>
+        <url>http://smi-protege.stanford.edu/svn/protege4/libraries/ca.uvic.cs.chisel.cajun/</url>
+    </scm>
+    
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://github.com/protegeproject/mvn-repo/raw/master/releases</url>
+        </repository>
+    </repositories>
+    
+    <dependencies>
+        <!-- Draw2d (http://www.eclipse.org/gef/draw2d/index.php) -->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>draw2d</artifactId>
+            <version>3.2.100-v20070529</version>
+        </dependency>
+        
+        <!-- Zest: The Eclipse Visualization Toolkit (http://www.eclipse.org/gef/zest/index.php) -->
+        <!-- According to Eclipse documentation, this set of visualization components was developed specifically for Eclipse.  Developing applications outside of Eclipse using Zest is not supported. -->
+        <dependency>
+            <groupId>org.eclipse.zest</groupId>
+            <artifactId>layouts</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <!-- Piccolo2D - Structured 2D Graphics Framework
+              https://code.google.com/p/piccolo2d/
+              http://www.piccolo2d.org/index.html
+              https://www.cs.umd.edu/hcil/jazz/index.shtml -->
+        <dependency>
+            <groupId>org.piccolo2d</groupId>
+            <artifactId>piccolo2d-core</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.piccolo2d</groupId>
+            <artifactId>piccolo2d-extras</artifactId>
+            <version>1.3.1</version>
+        </dependency>       
+    </dependencies>
 
-	<build>
-		<plugins>
+    <build>
+        <plugins>
             <plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.3.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Bundle-Activator>org.protege.editor.owl.ProtegeOWL</Bundle-Activator>
-						<Bundle-SymbolicName>${project.artifactId};singleton:=true</Bundle-SymbolicName>
-						<Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
-						<Export-Package>
-							${project.artifactId}*, 
-							org.eclipse.zest.layouts.*, 
-							org.eclipse.draw2d.*, 
-							edu.umd.cs.piccolo.*, 
-							edu.umd.cs.piccolox.*
-						</Export-Package>
-						<Import-Package>
-							!com.ibm.*, 
-							!org.eclipse.swt.*, 
-							!org.eclipse.core.runtime.*, 
-							!org.eclipse.jface.*, 
-							*
-						</Import-Package>
-					</instructions>
-					<executions>
-						<execution>
-							<id>bundle-manifest</id>
-							<phase>install</phase>
-							<goals>    
-								<goal>manifest</goal>
-							</goals>   
-						</execution>
-					</executions>
-				</configuration>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.0</version>
+              <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+              </configuration>
             </plugin>
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Activator>org.protege.editor.owl.ProtegeOWL</Bundle-Activator>
+                        <Bundle-SymbolicName>${project.artifactId};singleton:=true</Bundle-SymbolicName>
+                        <Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
+                        <Export-Package>
+                            ${project.artifactId}*, 
+                            org.eclipse.zest.layouts.*, 
+                            org.eclipse.draw2d.*, 
+                            edu.umd.cs.piccolo.*, 
+                            edu.umd.cs.piccolox.*
+                        </Export-Package>
+                        <Import-Package>
+                            !com.ibm.*, 
+                            !org.eclipse.swt.*, 
+                            !org.eclipse.core.runtime.*, 
+                            !org.eclipse.jface.*, 
+                            *
+                        </Import-Package>
+                    </instructions>
+                    <executions>
+                        <execution>
+                            <id>bundle-manifest</id>
+                            <phase>install</phase>
+                            <goals>    
+                                <goal>manifest</goal>
+                            </goals>   
+                        </execution>
+                    </executions>
+                </configuration>
+            </plugin>
+            <plugin>
+              <artifactId>maven-eclipse-plugin</artifactId>
+              <version>2.9</version>
+              <configuration>
+                <pde>true</pde>
+              </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
