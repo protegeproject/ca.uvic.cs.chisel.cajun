@@ -26,6 +26,8 @@ import ca.uvic.cs.chisel.cajun.actions.CajunAction;
 import ca.uvic.cs.chisel.cajun.actions.ClearOrphansAction;
 import ca.uvic.cs.chisel.cajun.actions.FocusOnHomeAction;
 import ca.uvic.cs.chisel.cajun.actions.LayoutAction;
+import ca.uvic.cs.chisel.cajun.actions.LocationPinAction;
+import ca.uvic.cs.chisel.cajun.actions.LocationUnpinAction;
 import ca.uvic.cs.chisel.cajun.actions.NoZoomAction;
 import ca.uvic.cs.chisel.cajun.actions.ZoomInAction;
 import ca.uvic.cs.chisel.cajun.actions.ZoomOutAction;
@@ -104,6 +106,12 @@ public class DefaultFlatGraphView extends JPanel {
 		for (LayoutAction action : graph.getLayouts()) {
 			addToolBarAction(action);
 		}
+
+		getToolBar().addSeparator();
+
+		// Location fixing
+		addToolBarAction(new LocationPinAction(graph));
+		addToolBarAction(new LocationUnpinAction(graph));
 
 		getToolBar().addSeparator();
 
