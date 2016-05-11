@@ -11,7 +11,7 @@ public class LocationPinAction extends CajunAction {
     private AbstractGraph graph;
 
     public LocationPinAction(AbstractGraph graph) {
-        super("Pin nodes' location", ResourceHandler.getIcon("icon_pin_location.png"));
+        super("Pin Nodes Location", ResourceHandler.getIcon("icon_pin_location.png"));
         this.graph = graph;
     }
 
