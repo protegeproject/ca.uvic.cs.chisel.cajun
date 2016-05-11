@@ -93,7 +93,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
+                <version>2.5.3</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -101,17 +101,17 @@
                         <Bundle-SymbolicName>${project.artifactId};singleton:=true</Bundle-SymbolicName>
                         <Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
                         <Export-Package>
-                            ${project.artifactId}*, 
-                            org.eclipse.zest.layouts.*, 
-                            org.eclipse.draw2d.*, 
-                            edu.umd.cs.piccolo.*, 
+                            ${project.artifactId}*,
+                            org.eclipse.zest.layouts.*,
+                            org.eclipse.draw2d.*,
+                            edu.umd.cs.piccolo.*,
                             edu.umd.cs.piccolox.*
                         </Export-Package>
                         <Import-Package>
-                            !com.ibm.*, 
-                            !org.eclipse.swt.*, 
-                            !org.eclipse.core.runtime.*, 
-                            !org.eclipse.jface.*, 
+                            !com.ibm.*,
+                            !org.eclipse.swt.*,
+                            !org.eclipse.core.runtime.*,
+                            !org.eclipse.jface.*,
                             *
                         </Import-Package>
                     </instructions>
@@ -119,9 +119,9 @@
                         <execution>
                             <id>bundle-manifest</id>
                             <phase>install</phase>
-                            <goals>    
+                            <goals>
                                 <goal>manifest</goal>
-                            </goals>   
+                            </goals>
                         </execution>
                     </executions>
                 </configuration>
